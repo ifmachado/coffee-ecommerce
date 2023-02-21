@@ -19,7 +19,7 @@ public class CategoryController {
     @PostMapping("/create")
     public String createCategory(@RequestBody Category category) {
         categoryService.createCategory(category);
-        return "sucess";
+        return "success";
     }
 
     @GetMapping("/list")
