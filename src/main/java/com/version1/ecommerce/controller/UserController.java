@@ -29,13 +29,13 @@ public class UserController {
     AuthenticationService authenticationService;
 
     @GetMapping("/token")
-    public List<User> findAllUser(@RequestParam("token") String token) throws AuthenticationFailException {
+    public List<User> findUserByToken(@RequestParam("token") String token) throws AuthenticationFailException {
         authenticationService.authenticate(token);
         return userRepository.findAll();
     }
 
     @GetMapping("/all")
-    public List<User> findAllUser(){
+    public List<User> findAllUsers(){
         return userRepository.findAll();
     }
 
