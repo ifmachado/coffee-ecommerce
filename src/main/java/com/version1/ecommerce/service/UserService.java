@@ -36,7 +36,6 @@ public class UserService {
          // If the email address has been registered then throw an exception.
          throw new CustomException("User already present");
      }
-
      //encrypt password
      String encryptedpassword = signUpDto.getPassword();
      try{
@@ -44,28 +43,16 @@ public class UserService {
      } catch (NoSuchAlgorithmException e) {
          e.printStackTrace();
      }
-
-
-
-
      //save the user
-
      User user = new User(signUpDto.getFirstName(), signUpDto.getFirstName(),
              signUpDto.getEmail(), encryptedpassword);
      userRepository.save(user);
-
-
     //create the token
-
      final AuthenticationToken authenticationToken = new AuthenticationToken(user);
 authenticationService.saveConfirmationToken(authenticationToken);
-
      ResponseDto responseDto = new
              ResponseDto("success", "user created successfully");
      return responseDto;
-
-
-
  }
 
 
@@ -98,18 +85,13 @@ authenticationService.saveConfirmationToken(authenticationToken);
             //logger.error("hashing password failed {}", e.getMessage());
             //throw new CustomException(e.getMessage());
         }
-
         //compare the password in db
         //if password match
-
         AuthenticationToken token = authenticationService.getToken(user);
-
         if(Objects.isNull(token)){
             throw new CustomException("token is not present");
         }
         return new SignInResponseDto("success", token.getToken());
-
-
         //retrieve token
         //return response
     }

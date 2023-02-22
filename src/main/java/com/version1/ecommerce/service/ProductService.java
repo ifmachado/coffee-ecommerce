@@ -1,6 +1,7 @@
 package com.version1.ecommerce.service;
 
 import com.version1.ecommerce.dto.ProductDto;
+import com.version1.ecommerce.exceptions.ProductNotExistException;
 import com.version1.ecommerce.model.Category;
 import com.version1.ecommerce.model.Product;
 import com.version1.ecommerce.repository.ProductRepository;
@@ -26,6 +27,11 @@ public class ProductService {
         product.setPrice(productDto.getPrice());
         productRepository.save(product);
 
+    }
+
+    public static ProductDto getDtoFromProduct(Product product) {
+        ProductDto productDto = new ProductDto(product);
+        return productDto;
     }
 
     public ProductDto getProductFromDto(Product product) {
@@ -65,5 +71,12 @@ public class ProductService {
             product.setPrice(productDto.getPrice());
             productRepository.save(product);
         }
+    }
+
+    public Product getProductById(Integer productId) throws ProductNotExistException {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if (!optionalProduct.isPresent())
+            throw new ProductNotExistException("Product id is invalid " + productId);
+        return optionalProduct.get();
     }
 }

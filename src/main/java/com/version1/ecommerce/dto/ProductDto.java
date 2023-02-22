@@ -1,5 +1,7 @@
 package com.version1.ecommerce.dto;
 
+import com.version1.ecommerce.model.Product;
+
 import javax.validation.constraints.NotNull;
 
 public class ProductDto  {
@@ -13,6 +15,23 @@ public class ProductDto  {
 
     public ProductDto() {
 
+    }
+
+    public ProductDto(Product product) {
+        this.setId(product.getId());
+        this.setName(product.getName());
+        this.setImageURL(product.getImageURL());
+        this.setDescription(product.getDescription());
+        this.setPrice(product.getPrice());
+        this.setCategoryId(product.getCategory().getId());
+    }
+
+    public ProductDto(@NotNull String name, @NotNull String imageURL, @NotNull double price, @NotNull String description, @NotNull Integer categoryId) {
+        this.name = name;
+        this.imageURL = imageURL;
+        this.price = price;
+        this.description = description;
+        this.categoryId = categoryId;
     }
 
     public String getName() {
