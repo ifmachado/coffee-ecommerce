@@ -8,12 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="V2" />
         <module name="ecommerce" />
+        <module name="coffee-ecommerce" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="V2" options="-parameters" />
+      <module name="coffee-ecommerce" options="-parameters" />
       <module name="ecommerce" options="-parameters" />
     </option>
   </component>
