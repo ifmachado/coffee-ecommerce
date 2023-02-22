@@ -41,4 +41,15 @@ public class ProductController {
         final List<ProductDto> products = productService.listProducts();
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
+
+    @PostMapping("/update/{productId}")
+    public ResponseEntity<ApiResponse> updateProduct(@PathVariable("productId") Integer productId, @RequestBody ProductDto productDto) throws Exception {
+        Optional<Category> optionalCategory = categoryRepository.findById(productDto.getCategoryId());
+        if (!optionalCategory.isPresent()) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "category is invalid"), HttpStatus.CONFLICT);
+        }
+        productService.updateProduct(productDto, productId);
+        return new ResponseEntity<>(new ApiResponse(true, "Product has been updated"), HttpStatus.OK);
+    }
+
 }
