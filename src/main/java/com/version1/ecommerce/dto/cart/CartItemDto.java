@@ -2,7 +2,6 @@ package com.version1.ecommerce.dto.cart;
 
 import com.version1.ecommerce.model.Cart;
 import com.version1.ecommerce.model.Product;
-
 import javax.validation.constraints.NotNull;
 
 public class CartItemDto {

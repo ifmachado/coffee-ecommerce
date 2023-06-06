@@ -1,9 +1,7 @@
 package com.version1.ecommerce.dto.cart;
 
 import com.version1.ecommerce.model.Cart;
-
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public class AddToCartDto {
     private Integer id;

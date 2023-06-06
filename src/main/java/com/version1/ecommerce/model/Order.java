@@ -1,8 +1,6 @@
 package com.version1.ecommerce.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.version1.ecommerce.dto.order.PlaceOrderDto;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;

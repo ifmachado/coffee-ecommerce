@@ -1,7 +1,6 @@
 package com.version1.ecommerce.model;
 
 import com.version1.ecommerce.dto.cart.CartDto;
-
 import java.util.List;
 
 public class CartCost {

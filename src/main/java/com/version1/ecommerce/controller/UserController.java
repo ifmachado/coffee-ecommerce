@@ -11,7 +11,6 @@ import com.version1.ecommerce.service.AuthenticationService;
 import com.version1.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
@@ -48,28 +47,4 @@ public class UserController {
     public SignInResponseDto signIn(@RequestBody SignInDto signInDto) {
         return userService.signIn(signInDto);
     }
-
-
-
-//
-//    @RequestMapping("user")
-//    @RestController
-//    public static class UserController {
-//
-//        @Autowired
-//        UserService userService;
-//
-//        @PostMapping("/signup")
-//        public ResponseDto signup(@RequestBody SignUpDto signupdto) {
-//            return userService.signUp(signupdto);
-//        }
-//
-//        @PostMapping("/signin")
-//        public SignInResponseDto signIn(@RequestBody SignInDto signInDto) {
-//            return userService.signIn(signInDto);
-//        }
-//
-//
-//
-//    }
 }

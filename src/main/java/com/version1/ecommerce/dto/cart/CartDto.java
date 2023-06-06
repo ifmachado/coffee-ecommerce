@@ -1,6 +1,5 @@
 package com.version1.ecommerce.dto.cart;
 
-
 import java.util.List;
 
 public class CartDto {
