@@ -11,3 +11,5 @@ target/classes/com/version1/ecommerce/controller/CategoryController.class
 target/classes/com/version1/ecommerce/dto/ProductDto.class
 target/classes/com/version1/ecommerce/service/CategoryService.class
 target/classes/com/version1/ecommerce/service/ProductService.class
+.env
+
